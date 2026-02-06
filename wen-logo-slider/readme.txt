@@ -2,10 +2,10 @@
 Contributors: WEN Solutions
 Donate link: http://wensolutions.com
 Tags: carousel, logo, slider, image carousel, logo carousel, logo showcase, logo slide, logo slide show, logo slider, logo slideshow, responsive,
-Requires at least: 4.4.0
-Tested up to: 6.6
+Requires at least: 4.7
+Tested up to: 6.9
 Requires PHP: 5.6.2
-Stable tag: 3.4.0
+Stable tag: 3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,6 +72,14 @@ Nice, make a post on the [Support Forum](http://wordpress.org/support/plugin/wen
 2. Display slider in front-end
 
 == Changelog ==
+
+= 3.5 =
+Release Date: 28th December, 2025
+
+* Fixed: Cross Site Scripting (XSS) reported by Nabil Irawan
+* Fixed Internationalize issue
+* Fixed badly_named_files for image
+* Tested up to WordPress v6.9
 
 = 3.4.0 =
 Release Date: 13th September, 2024

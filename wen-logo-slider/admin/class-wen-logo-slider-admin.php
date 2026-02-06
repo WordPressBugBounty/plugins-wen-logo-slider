@@ -101,7 +101,7 @@ class WEN_Logo_Slider_Admin {
 	   */
 	  public function caption_position_options() {
 	    $options = array(
-	      'hide'   => __( 'No caption', 'wen-logo-slider' ),	
+	      'hide'   => __( 'No caption', 'wen-logo-slider' ),
 	      'top'   => __( 'Top', 'wen-logo-slider' ),
 	      'bottom' => __( 'Bottom', 'wen-logo-slider' ),
 	    );
@@ -110,9 +110,9 @@ class WEN_Logo_Slider_Admin {
 	  public function caption_effect() {
 
 	    $options = array(
-	      'slideToggle'   => __( 'Slide Toggle', 'wen-logo-slider' ),	
+	      'slideToggle'   => __( 'Slide Toggle', 'wen-logo-slider' ),
 	      'fade'   => __( 'Fade', 'wen-logo-slider' ),
-	      
+
 	    );
 	    return $options;
 
@@ -124,7 +124,7 @@ class WEN_Logo_Slider_Admin {
 	 */
 	public function enqueue_styles() {
 
-		$screen = get_current_screen();		
+		$screen = get_current_screen();
 		if (  in_array( $screen->id, array( WEN_LOGO_SLIDER_POST_TYPE_LOGO_SLIDER, 'logo_slider_page_class-wen-logo-slider-admin' ) ) ) {
 			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wen-logo-slider-admin.css', array(), $this->version, 'all' );
 		}
@@ -149,7 +149,7 @@ class WEN_Logo_Slider_Admin {
 			wp_register_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wen-logo-slider-admin.js', array( 'jquery' ), $this->version, false );
 
 			wp_enqueue_script( $this->plugin_name.'-custom', plugin_dir_url( __FILE__ ) . 'js/wen-logo-slider-public.js', array( 'jquery' ), $this->version, false );
-			
+
 			// choosen image
 			wp_enqueue_script( $this->plugin_name.'-chosen-jquery-min', plugin_dir_url( __FILE__ ) . 'js/wen-logo-slider-chosen.jquery.min.js', array( 'jquery' ), $this->version, false );
 			wp_enqueue_script( $this->plugin_name.'-chosenImag-.jquery', plugin_dir_url( __FILE__ ) . 'js/wen-logo-slider-chosenImage.jquery.js', array( 'jquery' ), $this->version, false );
@@ -187,7 +187,7 @@ class WEN_Logo_Slider_Admin {
 			// 	$screen,
 			// 	'side'
 			// );
-			
+
 			add_meta_box(
 				'wen_logo_slider_doc_block_id',
 				__( 'Documentation', 'wen-logo-slider' ),
@@ -220,71 +220,70 @@ class WEN_Logo_Slider_Admin {
 		}
 	}
 
-	public function documentation_box_callback(){
+	public function documentation_box_callback() {
 		?>
 
-       <div class="thumbnail">
-            <img src="<?php echo WEN_LOGO_SLIDER_URL ?>/admin/images/docico.png" style="max-width:100%">
-             <p class="text-justify">Click Below for our full Documentation about logo slider. </p>
-             <p class="text-center"><a href="http://wensolutions.com/plugins/wen-logo-slider/" target="_blank" class="button button-primary">Get Documentation Here</a></p>
-       </div>             
+		<div class="thumbnail wen-logo-slider-documentation">
+			<img src="<?php echo esc_url( WEN_LOGO_SLIDER_URL . '/admin/images/docico.png' ); ?>" style="max-width:100%" alt="<?php echo esc_attr__( 'Documentation Icon', 'wen-logo-slider' ); ?>">
+			<p class="text-justify"><?php echo esc_html__( 'About WEN Logo Slider', 'wen-logo-slider' ); ?></p>
+			<p class="text-center"><a href="<?php echo esc_url( 'https://wordpress.org/plugins/wen-logo-slider/' ); ?>" target="_blank" class="button button-primary"><?php echo esc_html__( 'View Plugin', 'wen-logo-slider' ); ?></a></p>
+		</div>
 
 		<?php
 	}
-	
-	public function help_box_callback(){
+
+	public function help_box_callback() {
 		?>
 
-       <div class="thumbnail">
-            <img src="<?php echo WEN_LOGO_SLIDER_URL ?>/admin/images/help.png">
-             <p class="text-justify">If you need further assistance, Please feel free to visit our support team.</p>
-             <p class="text-center"><a href="https://wordpress.org/support/plugin/wen-logo-slider" target="_blank" class="button button-primary">Get Support Here</a></p>
-       </div>             
+     	<div class="thumbnail">
+     		<img src="<?php echo esc_url( WEN_LOGO_SLIDER_URL . '/admin/images/help.png' ); ?>">
+     		<p class="text-justify"><?php echo esc_html__( 'If you need further assistance, Please feel free to visit our support team.', 'wen-logo-slider' ); ?></p>
+             	<p class="text-center"><a href="<?php echo esc_url( 'https://wordpress.org/support/plugin/wen-logo-slider/' ); ?>" target="_blank" class="button button-primary"><?php echo esc_html__( 'Get Support Here', 'wen-logo-slider' ); ?></a></p>
+       </div>
 
 		<?php
 	}
+
 	public function review_box_callback(){
-		?>		
+		?>
 		<div class="thumbnail">
-			<p class="text-center">  
+			<p class="text-center">
 				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
 				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
 				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
 				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
-				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>					
+				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
 			</p>
-			<h5>"After testing a lot of plugin. I was hopeless o get a free logo slider but luckily I found this one and it saved the day :D "</h5>
-			<span class="by"><strong> <a href="https://wordpress.org/support/view/plugin-reviews/wen-logo-slider" target="_blank">Suleman Muqeed</a></strong></span>
+			<h5><?php echo esc_html__( 'After testing a lot of plugin. I was hopeless o get a free logo slider but luckily I found this one and it saved the day', 'wen-logo-slider' ); ?></h5>
+			<span class="by"><strong> <a href="<?php echo esc_url( 'https://wordpress.org/support/topic/made-my-day-4/' ); ?>" target="_blank"><?php echo esc_html__( 'Suleman Muqeed', 'wen-logo-slider' ); ?></a></strong></span>
+		</div>
+		<div class="thumbnail">
+			<p class="text-center">
+				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
+				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
+				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
+				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
+				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
+			</p>
+			<h5><?php echo esc_html__( 'I had an issue and received good response, issue finally resolved. Excellent plugin. I have the Pro version and its a great value – very affordable and works beautifully.', 'wen-logo-slider' ); ?></h5>
+			<span class="by"><strong> <a href="<?php echo esc_url( 'https://wordpress.org/support/topic/fantastic-plugin-fantastic-support-get-pro-version/' ); ?>" target="_blank"><?php echo esc_html__( 'anne1313', 'wen-logo-slider' ); ?></a></strong></span>
 
 		</div>
 		<div class="thumbnail">
-			<p class="text-center"> 
+			<p class="text-center">
 				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
 				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
 				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
 				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
-				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>			
+				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
 			</p>
-			<h5>"The best solution: Light and easy to use! "</h5>
-			<span class="by"><strong><a href="https://wordpress.org/support/view/plugin-reviews/wen-logo-slider" target="_blank">ntorga</a></strong></span>
-		</div>
-		<div class="thumbnail">
-			
-			<p class="text-center"> 
-				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
-				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
-				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
-				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>
-				<i class="dashicons dashicons-star-filled" aria-hidden="true"></i>			 
-			</p>
-			<h5>"The best slider i found after testing a lot of them!! Very clean and very easy to install and setup!"</h5>
-			<span class="by"><strong><a href="https://wordpress.org/support/view/plugin-reviews/wen-logo-slider" target="_blank">sandrobatista</a> </strong></span>
+			<h5><?php echo esc_html__( 'awesome clean slider', 'wen-logo-slider' ); ?></h5>
+			<span class="by"><strong> <a href="<?php echo esc_url( 'https://wordpress.org/support/topic/awesome-clean-slider/' ); ?>" target="_blank"><?php echo esc_html__( 'sandrobatista', 'wen-logo-slider' ); ?></a></strong></span>
 		</div>
 		<div class="thumbnail last">
-			<h5>"Please fill free to leave us a review, if you found this plugin helpful."</h5>
-			<p  class="text-center"><a href="https://wordpress.org/support/view/plugin-reviews/wen-logo-slider" target="_blank" class="button button-primary">Leave a Review</a></p>
+			<h5><?php echo esc_html__( 'Please fill free to leave us a review, if you found this plugin helpful.', 'wen-logo-slider' ); ?></h5>
+			<p class="text-center"><a href="<?php echo esc_url( 'https://wordpress.org/support/plugin/wen-logo-slider/reviews/#new-post' ); ?>" target="_blank" class="button button-primary"><?php echo esc_html__( 'Leave a Review', 'wen-logo-slider' ); ?></a></p>
 		</div>
-     
 		<?php
 	}
 
@@ -294,20 +293,20 @@ class WEN_Logo_Slider_Admin {
 
 	    <div id="tabs-container" class="clearfix">
 		    <ul class="tabs-menu clearfix">
-		        <li class="current"><a href="#tab-1">Slides</a></li>
-		        <li><a href="#tab-2">Settings</a></li>
-		        <li><a href="#tab-3">Uses</a></li>		        
+		        <li class="current"><a href="#tab-1"><?php echo esc_html__( 'Slides', 'wen-logo-slider' ); ?></a></li>
+		        <li><a href="#tab-2"><?php echo esc_html__( 'Settings', 'wen-logo-slider' ); ?></a></li>
+		        <li><a href="#tab-3"><?php echo esc_html__( 'Uses', 'wen-logo-slider' ); ?></a></li>
 		    </ul>
 		    <div class="tab clearfix">
 		        <div id="tab-1" class="tab-content ws_slides">
 	            	<?php include WEN_LOGO_SLIDER_DIR.'/admin/partials/wen-logo-slider-slides.php'; ?>
 		        </div>
 		        <div id="tab-2" class="tab-content ws_settings">
-	            	<?php include WEN_LOGO_SLIDER_DIR.'/admin/partials/wen-logo-slider-settings.php'; ?>	            	
+	            	<?php include WEN_LOGO_SLIDER_DIR.'/admin/partials/wen-logo-slider-settings.php'; ?>
 		        </div>
 		        <div id="tab-3" class="tab-content ws_uses">
-	            	<?php $this->usage_box_callback($post) ?>	            	
-		        </div>		        
+	            	<?php $this->usage_box_callback($post) ?>
+		        </div>
 		    </div>
 		</div>
 	<?php
@@ -341,17 +340,26 @@ class WEN_Logo_Slider_Admin {
 
 	function usage_box_callback( $post ){
 		?>
-		<h4><?php _e( 'Shortcode', 'wen-logo-slider' ); ?></h4>
-		<p><?php _e( 'Copy and paste this shortcode directly into any WordPress post or page.', 'wen-logo-slider' ); ?></p>
-		<input type="text" class="large-text code" readonly="readonly" value='<?php echo '[WLS id="'.$post->ID.'"]'; ?>' />
-
-		<h4><?php _e( 'Template Include', 'wen-logo-slider' ); ?></h4>
-		<p><?php _e( 'Copy and paste this code into a template file to include the slider within your theme.', 'wen-logo-slider' ); ?></p>
-		<input type="text" class="large-text code" readonly="readonly" value="&lt;?php echo do_shortcode(&quot;[WLS id='<?php echo $post->ID; ?>']&quot;); ?&gt;" />
+		<h4><?php esc_html_e( 'Shortcode', 'wen-logo-slider' ); ?></h4>
+		<p><?php esc_html_e( 'Copy and paste this shortcode directly into any WordPress post or page.', 'wen-logo-slider' ); ?></p>
+		<input
+		    type="text"
+		    class="large-text code"
+		    readonly="readonly"
+		    value="<?php echo esc_attr( '[WLS id="' . $post->ID . '"]' ); ?>"
+		/>
+		<h4><?php esc_html_e( 'Template Include', 'wen-logo-slider' ); ?></h4>
+		<p><?php esc_html_e( 'Copy and paste this code into a template file to include the slider within your theme.', 'wen-logo-slider' ); ?></p>
+		<input
+		    type="text"
+		    class="large-text code"
+		    readonly="readonly"
+		    value="<?php echo esc_attr( '<?php echo do_shortcode("[WLS id=\'' . $post->ID . '\']"); ?>' ); ?>"
+		/>
 		<?php
 	}
 
-	function save_settings_meta_box( $post_id ){		
+	function save_settings_meta_box( $post_id ){
 		if ( WEN_LOGO_SLIDER_POST_TYPE_LOGO_SLIDER != get_post_type( $post_id ) ) {
 			return $post_id;
 		}
@@ -395,7 +403,7 @@ class WEN_Logo_Slider_Admin {
 			}
 		}
 
-		if ( ! empty( $refined_settings ) ) {			
+		if ( ! empty( $refined_settings ) ) {
 			update_post_meta( $post_id, 'wen_logo_slider_settings', $refined_settings );
 		}
 	}
@@ -423,9 +431,9 @@ class WEN_Logo_Slider_Admin {
 			$slide_title_array = $_POST['slide_title'];
 		}
 
-		$slides_array = array();		
+		$slides_array = array();
 		$cnt = 0;
-		
+
 		//$errrorMsg = "";
 		foreach ( $slide_title_array as $key => $title ) {
 
@@ -463,11 +471,11 @@ class WEN_Logo_Slider_Admin {
 	function usage_column_content( $column_name, $post_id ){
 		switch ( $column_name ) {
 			case 'id':
-				echo $post_id;
+				echo esc_html( $post_id );
 				break;
 
 			case 'usage':
-				echo '<code>[WLS id="' . $post_id . '"]</code>';
+				echo '<code>' . esc_html( '[WLS id="' . $post_id . '"]' ) . '</code>';
 				break;
 
 			case 'slides':
@@ -479,10 +487,11 @@ class WEN_Logo_Slider_Admin {
 				if( !empty( $slides ) ){
 					$img_id = $slides[0]['slide_image_id'];
 					$src = wp_get_attachment_thumb_url( $img_id );
-				
-					echo '<img src="'.$src.'"  height="100" alt="'.$slides[0]['title'].'" title="'.$slides[0]['title'].'">';					
-				}			
-			break;			
+					$title  = isset( $slides[0]['title'] ) ? $slides[0]['title'] : '';
+
+					echo '<img src="' . esc_url( $src ) . '" height="100" alt="' . esc_attr( $title ) . '" title="' . esc_attr( $title ) . '">';
+				}
+			break;
 			default:
 				break;
 		}
@@ -557,7 +566,7 @@ class WEN_Logo_Slider_Admin {
 			$all_slides = get_posts($args);
 			 ?>
 			 <?php if ( ! empty($all_slides ) ): ?>
-			    <p><?php _e( 'Select Slider', 'wen-logo-slider' ); ?>
+			    <p><?php esc_html_e( 'Select Slider', 'wen-logo-slider' ); ?>
 			    <select name="wls-slide" id="wls-slide">
 			    <?php foreach ($all_slides as $key => $slide): ?>
 				    	<option value="<?php echo esc_attr( $slide->ID); ?>"><?php echo esc_attr( $slide->post_title); ?></option>
@@ -565,7 +574,7 @@ class WEN_Logo_Slider_Admin {
 			    </select>
 			    </p>
 			    <p class="submit">
-			      <input type="button" id="WLS-submit" class="button-primary" value="<?php esc_attr( _e( 'Insert', 'wen-logo-slider' ) ); ?>" name="submit" />
+			      <input type="button" id="WLS-submit" class="button-primary" value="<?php esc_attr( esc_html_e( 'Insert', 'wen-logo-slider' ) ); ?>" name="submit" />
 			    </p>
 			    <script type="text/javascript">
 			    jQuery(document).ready(function($){
@@ -591,7 +600,7 @@ class WEN_Logo_Slider_Admin {
 			       </script>
 
 			 	<?php else: ?>
-			 		<p><strong><?php _e( 'No slider found', 'wen-logo-slider' ); ?></strong></p>
+			 		<p><strong><?php esc_html_e( 'No slider found', 'wen-logo-slider' ); ?></strong></p>
 			 <?php endif ?>
 
 		  </div>
@@ -599,17 +608,17 @@ class WEN_Logo_Slider_Admin {
 		<?php
 	}
 
-	function html_templates(){
+	function html_templates() {
 		?>
-		<script type="text/template" id='template-wls-slider-item'>
+		<script type="text/template" id="template-wls-slider-item">
 			<div class="slide-item-wrap clearfix">
 				<div class="slide-item-left">
 					<input type="button" value="" class="button btn-remove-slide-item"/>
 					<div class="wls-form-row">
 						<input type="hidden" name="slide_image_id[]" value="" class="wls-slide-image-id" />
-						<input type="button" class="wls-select-single-img button button-primary" value="<?php _e( 'Upload', 'wen-logo-slider' ); ?>" data-uploader_button_text="<?php _e( 'Select', 'wen-logo-slider' );?>" data-uploader_title="<?php _e( 'Select Image', 'wen-logo-slider' );?>" />
+						<input type="button" class="wls-select-single-img button button-primary" value="<?php esc_html_e( 'Upload', 'wen-logo-slider' ); ?>" data-uploader_button_text="<?php esc_html_e( 'Select', 'wen-logo-slider' );?>" data-uploader_title="<?php esc_html_e( 'Select Image', 'wen-logo-slider' );?>" />
 						<div class="image-preview-wrap" style="display:none;" >
-							<img class="img-preview" alt="<?php _e( 'Preview', 'wen-logo-slider' ); ?>" src="" height="150" width="150" />
+							<img class="img-preview" alt="<?php esc_html_e( 'Preview', 'wen-logo-slider' ); ?>" src="" height="150" width="150" />
 							<a href="#" class="btn-wls-remove-image-upload">
 								<span class="dashicons dashicons-dismiss"></span>
 							</a>
@@ -620,24 +629,24 @@ class WEN_Logo_Slider_Admin {
 
 					<div class="wls-form-row">
 						<i class="dashicons dashicons-editor-textcolor"></i>
-						<input type="text" name="slide_title[]" value="" placeholder="<?php _e( 'Enter Title', 'wen-logo-slider' ); ?>" class="txt-slide-title regular-text code" />
-						<span class="description"><?php _e( 'Enter Title', 'wen-logo-slider' ); ?></span>
+						<input type="text" name="slide_title[]" value="" placeholder="<?php esc_html_e( 'Enter Title', 'wen-logo-slider' ); ?>" class="txt-slide-title regular-text code" />
+						<span class="description"><?php esc_html_e( 'Enter Title', 'wen-logo-slider' ); ?></span>
 					</div>
 
 					<div class="wls-form-row">
 						<i class="dashicons dashicons-admin-site"></i>
 
-						<input type="text" name="slide_url[]" value="" placeholder="<?php _e( 'Enter URL', 'wen-logo-slider' ); ?>" class="txt-slide-url regular-text code" />
-						<span class="description"><?php _e( 'Enter URL', 'wen-logo-slider' ); ?></span>
+						<input type="text" name="slide_url[]" value="" placeholder="<?php esc_html_e( 'Enter URL', 'wen-logo-slider' ); ?>" class="txt-slide-url regular-text code" />
+						<span class="description"><?php esc_html_e( 'Enter URL', 'wen-logo-slider' ); ?></span>
 					</div>
 
 					<div class="wls-form-row">
 						<i class="dashicons dashicons-share-alt2"></i>
 						<select name="slide_new_window[]" class="wls-choosen">
-							<option value="yes"><?php _e( 'Yes', 'wen-logo-slider' ); ?></option>
-							<option value="no"><?php _e( 'No', 'wen-logo-slider' ); ?></option>
+							<option value="yes"><?php esc_html_e( 'Yes', 'wen-logo-slider' ); ?></option>
+							<option value="no"><?php esc_html_e( 'No', 'wen-logo-slider' ); ?></option>
 						</select>
-						<span class="description"><?php _e( 'Open in new window', 'wen-logo-slider' ); ?></span>
+						<span class="description"><?php esc_html_e( 'Open in new window', 'wen-logo-slider' ); ?></span>
 
 					</div>
 				</div>
@@ -654,22 +663,57 @@ class WEN_Logo_Slider_Admin {
 		$post_type_object = get_post_type_object( $post_type );
 
 		$messages[WEN_LOGO_SLIDER_POST_TYPE_LOGO_SLIDER] = array(
-			0  => '', // Unused. Messages start at index 1.
-			1  => __( 'Slider updated.', 'wen-logo-slider' ),
-			2  => __( 'Custom field updated.', 'wen-logo-slider' ),
-			3  => __( 'Custom field deleted.', 'wen-logo-slider' ),
-			4  => __( 'Slider updated.', 'wen-logo-slider' ),
-			/* translators: %s: date and time of the revision */
-			5  => isset( $_GET['revision'] ) ? sprintf( __( 'Slider restored to revision from %s', 'wen-logo-slider' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-			6  => __( 'Slider created.', 'wen-logo-slider' ),
-			7  => __( 'Slider saved.', 'wen-logo-slider' ),
-			8  => __( 'Slider submitted.', 'wen-logo-slider' ),
-			9  => sprintf(
-				__( 'Slider scheduled for: <strong>%1$s</strong>.', 'wen-logo-slider' ),
-				// translators: Publish box date format, see http://php.net/date
-				date_i18n( __( 'M j, Y @ G:i', 'wen-logo-slider' ), strtotime( $post->post_date ) )
-			),
-			10 => __( 'Slider draft updated.', 'wen-logo-slider' )
+		    0  => '', // Unused. Messages start at index 1.
+		    1  => __( 'Slider updated.', 'wen-logo-slider' ),
+		    2  => __( 'Custom field updated.', 'wen-logo-slider' ),
+		    3  => __( 'Custom field deleted.', 'wen-logo-slider' ),
+		    4  => __( 'Slider updated.', 'wen-logo-slider' ),
+
+		    /* translators: %1$s: date and time of the revision */
+		    5  => isset( $_GET['revision'] ) ? sprintf(
+		        /* translators: %1$s: date and time of the revision */
+		        __( 'Slider restored to revision from %1$s', 'wen-logo-slider' ),
+		        wp_post_revision_title( (int) $_GET['revision'], false )
+		    ) : false,
+
+		    6  => __( 'Slider created.', 'wen-logo-slider' ),
+		    7  => __( 'Slider saved.', 'wen-logo-slider' ),
+		    8  => __( 'Slider submitted.', 'wen-logo-slider' ),
+
+		    /* translators: %1$s: scheduled date of the slider. Publish box date format: see http://php.net/date */
+		    9  => sprintf(
+		        /* translators: %1$s: scheduled date of the slider. Publish box date format: see http://php.net/date */
+		        __( 'Slider scheduled for: <strong>%1$s</strong>.', 'wen-logo-slider' ),
+		        date_i18n( 'M j, Y @ G:i', strtotime( $post->post_date ) )
+		    ),
+
+		    /* translators: %1$s: title of the slider */
+		    10 => sprintf(
+		        /* translators: %1$s: title of the slider */
+		        __( 'Slider draft updated: %1$s', 'wen-logo-slider' ),
+		        get_the_title( $post->ID )
+		    ),
+
+		    /* translators: %1$s: title of the slider */
+		    11 => sprintf(
+		        /* translators: %1$s: title of the slider */
+		        __( 'Slider published: %1$s', 'wen-logo-slider' ),
+		        get_the_title( $post->ID )
+		    ),
+
+		    /* translators: %1$s: scheduled date of the slider. Publish box date format: see http://php.net/date */
+		    12 => sprintf(
+		        /* translators: %1$s: scheduled date of the slider. Publish box date format: see http://php.net/date */
+		        __( 'Slider scheduled for: %1$s', 'wen-logo-slider' ),
+		        date_i18n( 'M j, Y @ G:i', strtotime( $post->post_date ) )
+		    ),
+
+		    /* translators: %1$s: title of the slider */
+		    13 => sprintf(
+		        /* translators: %1$s: title of the slider */
+		        __( 'Slider submitted: %1$s', 'wen-logo-slider' ),
+		        get_the_title( $post->ID )
+		    ),
 		);
 
 		return $messages;
@@ -677,31 +721,31 @@ class WEN_Logo_Slider_Admin {
 
 
 	/// wen logo slider Settings
-	function wen_logo_slider_setting_menu(){ 
+	function wen_logo_slider_setting_menu(){
 		add_submenu_page('edit.php?post_type=logo_slider', 'WL Slider Pro Admin', 'Settings', 'edit_posts', basename(__FILE__), array( $this, 'wen_logo_slider_setting_html_callback' ) );
 	}
 
 	function wen_logo_slider_setting_html_callback(){
-	
+
 	$wlsp_global_settings = get_option('wen_logo_slider_settings');
 	if(empty($wlsp_global_settings))
 		$wlsp_global_settings = array();
 
-	$defaults =$this->settings_default_args();	
+	$defaults =$this->settings_default_args();
 	$settings_args = array_merge( $defaults, $wlsp_global_settings );
 	?>
 	<div class="wrap clearfix" >
    		<!--  Settings save Message  -->
    		<?php if( isset($_GET['settings-updated']) ) { ?>
 		<div id="message" class="updated">
-		<p><strong><?php _e('Settings saved.', 'wen-logo-slider') ?></strong></p>
+		<p><strong><?php esc_html_e('Settings saved.', 'wen-logo-slider') ?></strong></p>
 		</div>
 		<?php } ?>
 		<!--  /Settings save Message  -->
 		<h2>Wen Logo Slider Settings</h2>
 		<div class="ws_settings" style="float:left; width:73%">
 			<!-- <ul class="tab-menu clearfix">
-		        <li class="current"><a>Slider Pro Settings</a></li>		        
+		        <li class="current"><a>Slider Pro Settings</a></li>
 		    </ul> -->
 			<form method="post" action="options.php">
 
@@ -722,8 +766,8 @@ class WEN_Logo_Slider_Admin {
 			<div class="ws-metabox rating-user">
 				<h4>Reviews</h4>
 				<?php $this->review_box_callback(); ?>
-			</div>		
-		</div>					
+			</div>
+		</div>
 	</div>
 
 	<?php
@@ -733,65 +777,73 @@ class WEN_Logo_Slider_Admin {
 		register_setting('wen_logo_slider_group','wen_logo_slider_settings');
 	}
 
-	function settings_template($settings_args){ ob_start();  ?>	
+	function settings_template($settings_args) {
+		ob_start();
+		?>
 		<?php do_action( 'wen_logo_slider_before_setting_fields', $settings_args ); ?>
+
 		<div class="setting-options-wrap">
 			<h3 class="option-title"><a href="#" class="showing">General Settings <i class="dashicons dashicons-arrow-up"></i></a></h3>
 			<div class="setting-options general-options">
 				<p class="first-row">
-					<label  class="title"><strong><?php _e( 'Show Slider Title', 'wen-logo-slider' ); ?></strong></label>
+					<label  class="title"><strong><?php esc_html_e( 'Show Slider Title', 'wen-logo-slider' ); ?></strong></label>
 					<label>
 						<input type="hidden" id="wen_logo_slider_settings[show_title]" name="wen_logo_slider_settings[show_title]" value="0" />
 						<input type="checkbox" id="wls-show_title" name="wen_logo_slider_settings[show_title]" value="1" <?php if(isset( $settings_args['show_title'])){checked( $settings_args['show_title'], 1, true);} else{ echo "checked";} ?> />
-						<span class="small"><?php _e( 'Show/Hide', 'wen-logo-slider' ); ?></span>
+						<span class="small"><?php esc_html_e( 'Show/Hide', 'wen-logo-slider' ); ?></span>
 					</label>
 				</p>
 
-				<div id="slide-headings" style="<?php echo ( isset($settings_args['show_title']) && $settings_args['show_title'] === '1')?'display:block':'display:none'; ?>">			
+				<div id="slide-headings" style="<?php echo ( isset($settings_args['show_title']) && $settings_args['show_title'] === '1')?'display:block':'display:none'; ?>">
 					<p>
-						<label class="title"><strong><?php _e( 'Title Size', 'wen-logo-slider' ); ?></strong></label>
+						<label class="title"><strong><?php esc_html_e( 'Title Size', 'wen-logo-slider' ); ?></strong></label>
 						<?php $scroll_options = $this->get_heading_size(); ?>
 						<select name="wen_logo_slider_settings[heading_size]" id="wls_heading_size" class="wls-choosen">
 							<?php foreach ($scroll_options as $key => $val): ?>
 								<option value="<?php echo esc_attr( $key ); ?>" <?php if(isset( $settings_args['heading_size']))selected( $settings_args['heading_size'], $key ); ?>><?php echo esc_attr( $val ); ?></option>
 							<?php endforeach ?>
-						</select>					
-					</p>				
+						</select>
+					</p>
 				</div>
 
 				<p>
-					<label  class="title"><strong><?php _e( 'Auto Play', 'wen-logo-slider' ); ?></strong></label>
+					<label  class="title"><strong><?php esc_html_e( 'Auto Play', 'wen-logo-slider' ); ?></strong></label>
 					<label>
 						<input type="hidden" id="wen_logo_slider_settings[auto_play]" name="wen_logo_slider_settings[auto_play]" value="0" />
 						<input type="checkbox" id="wen_logo_slider_settings[auto_play]" name="wen_logo_slider_settings[auto_play]" value="1" <?php if(isset( $settings_args['auto_play'])){checked( $settings_args['auto_play'], 1, true);} else{ echo "checked";} ?> />
-						<span class="small"><?php _e( 'Enable', 'wen-logo-slider' ); ?></span>
+						<span class="small"><?php esc_html_e( 'Enable', 'wen-logo-slider' ); ?></span>
 					</label>
 				</p>
 
-				
+
 				<p>
-					<label class="title"><strong><?php _e( 'Images per Slide', 'wen-logo-slider' ); ?></strong></label>			
+					<label class="title"><strong><?php esc_html_e( 'Images per Slide', 'wen-logo-slider' ); ?></strong></label>
 					<input type="number" id="images_per_slide" min="1" max="9" name="wen_logo_slider_settings[images_per_slide]" value="<?php echo esc_attr( $settings_args['images_per_slide'] ); ?>" />
-					<span class="description">(<?php echo sprintf( __( 'number between %d-%d', 'wen-logo-slider' ), 1, 9) ;	?>)</span>
+					<?php
+					/* translators: %1$d and %2$d: minimum and maximum numbers allowed */
+					$number_text = __( 'number between %1$d-%2$d', 'wen-logo-slider' );
+					?>
+					<span class="description">(<?php echo esc_html( sprintf( $number_text, 1, 9 ) ); ?>)</span>
+
 				</p>
 				<p>
-					<label  class="title"><strong><?php _e( 'Pause on hover', 'wen-logo-slider' ); ?></strong></label>
+					<label  class="title"><strong><?php esc_html_e( 'Pause on hover', 'wen-logo-slider' ); ?></strong></label>
 					<label>
 						<input type="hidden" id="wen_logo_slider_settings[hover]" name="wen_logo_slider_settings[hover]" value="0" />
 						<input type="checkbox" id="wen_logo_slider_settings[hover]" name="wen_logo_slider_settings[hover]" value="1" <?php if(isset( $settings_args['hover']))checked( $settings_args['hover'], 1, true); ?> />
-						<span class="small"><?php _e( 'Enable', 'wen-logo-slider' ); ?></span>
+						<span class="small"><?php esc_html_e( 'Enable', 'wen-logo-slider' ); ?></span>
 					</label>
 				</p>
 				<p>
-					<label  class="title"><strong><?php _e( 'Center Mode', 'wen-logo-slider' ); ?></strong></label>
+					<label  class="title"><strong><?php esc_html_e( 'Center Mode', 'wen-logo-slider' ); ?></strong></label>
 					<label>
 						<input type="hidden" id="wen_logo_slider_settings[center_mode]" name="wen_logo_slider_settings[center_mode]" value="0" />
 						<input type="checkbox" id="wen_logo_slider_settings[center_mode]" name="wen_logo_slider_settings[center_mode]" value="1" <?php if(isset( $settings_args['center_mode']))checked( $settings_args['center_mode'], 1, true); ?> />
-						<span class="small"><?php _e( 'Enables centered view', 'wen-logo-slider' ); ?></span>
+						<span class="small"><?php esc_html_e( 'Enables centered view', 'wen-logo-slider' ); ?></span>
 					</label>
 				</p>
 				<p>
-					<label class="title"><strong><?php _e( 'Caption Position', 'wen-logo-slider' ); ?></strong></label>
+					<label class="title"><strong><?php esc_html_e( 'Caption Position', 'wen-logo-slider' ); ?></strong></label>
 					<?php $caption_options = $this->caption_position_options(); ?>
 					<select name="wen_logo_slider_settings[caption]" class="wls-choosen" id="wls_caption">
 						<?php foreach ($caption_options as $key): ?>
@@ -802,7 +854,7 @@ class WEN_Logo_Slider_Admin {
 
 				<div id="caption-effect" <?php echo ((isset($settings_args['caption']) && $settings_args['caption'] == "No caption") || !isset($settings_args['caption']))? 'style="display:none"':'a'; ?>>
 					<p>
-					<label class="title"><strong><?php _e( 'Caption Effect', 'wen-logo-slider' ); ?></strong></label>
+					<label class="title"><strong><?php esc_html_e( 'Caption Effect', 'wen-logo-slider' ); ?></strong></label>
 					<?php $caption_effect = $this->caption_effect(); ?>
 					<select name="wen_logo_slider_settings[caption_effect]" class="wls-choosen">
 						<?php foreach ($caption_effect as $key): ?>
@@ -810,46 +862,46 @@ class WEN_Logo_Slider_Admin {
 						<?php endforeach ?>
 					</select>
 				</p>
-				</div>	
+				</div>
 
 				<p>
-					<label class="title"><strong><?php _e( 'Random Order', 'wen-logo-slider' ); ?></strong></label>
+					<label class="title"><strong><?php esc_html_e( 'Random Order', 'wen-logo-slider' ); ?></strong></label>
 					<label>
 						<input type="hidden" id="wen_logo_slider_settings[enable_random_order]" name="wen_logo_slider_settings[enable_random_order]" value="0" />
 						<input type="checkbox" id="wen_logo_slider_settings[enable_random_order]" name="wen_logo_slider_settings[enable_random_order]" value="1" <?php if(isset( $settings_args['enable_random_order'])){checked( $settings_args['enable_random_order'], 1, true);} else{ echo "checked";} ?>  />
-						<span class="small"><?php _e( 'Enable', 'wen-logo-slider' ); ?></span>
+						<span class="small"><?php esc_html_e( 'Enable', 'wen-logo-slider' ); ?></span>
 					</label>
-				</p>				
+				</p>
 			</div>
 		</div>
-			
+
 		<div class="setting-options-wrap">
 			<h3 class="option-title"><a href="#">Advance Settings <i class="dashicons dashicons-arrow-down"></i></a></h3>
 			<div class="setting-options advance-options">
-				
+
 				<p>
-					<label class="title"><strong><?php _e( 'Slider Delay', 'wen-logo-slider' ); ?></strong></label>
+					<label class="title"><strong><?php esc_html_e( 'Slider Delay', 'wen-logo-slider' ); ?></strong></label>
 					<input type="number" id="numbersonly" min="1" max="20" name="wen_logo_slider_settings[slider_delay]" value="<?php echo esc_attr( $settings_args['slider_delay'] ); ?>" />
-					<span class="description">(<?php _e( 'in seconds', 'wen-logo-slider' ); ?>)</span>
+					<span class="description">(<?php esc_html_e( 'in seconds', 'wen-logo-slider' ); ?>)</span>
 				</p>
 				<p>
-					<label class="title"><strong><?php _e( 'Transition Time', 'wen-logo-slider' ); ?></strong></label>			
+					<label class="title"><strong><?php esc_html_e( 'Transition Time', 'wen-logo-slider' ); ?></strong></label>
 					<input type="number" id="numbers" min="1" max="9" name="wen_logo_slider_settings[transition_time]" value="<?php echo esc_attr( $settings_args['transition_time'] ); ?>" />
-					<span class="description">(<?php _e( 'in seconds', 'wen-logo-slider' ); ?>)</span>
+					<span class="description">(<?php esc_html_e( 'in seconds', 'wen-logo-slider' ); ?>)</span>
 				</p>
 
 				<p>
-					<label class="title"><strong><?php _e( 'Enable Mobile Option', 'wen-logo-slider' ); ?></strong></label>
-					<label>				
+					<label class="title"><strong><?php esc_html_e( 'Enable Mobile Option', 'wen-logo-slider' ); ?></strong></label>
+					<label>
 						<input type="hidden" id="" name="wen_logo_slider_settings[wls_enable_mobile_resolution]" value="0" />
 						<input type="checkbox" id="wls_enable_mobile_resolution" name="wen_logo_slider_settings[wls_enable_mobile_resolution]" value="1" <?php if(isset( $settings_args['wls_enable_mobile_resolution']))checked( $settings_args['wls_enable_mobile_resolution'], 1, true); ?> />
-						<span class="small"><?php _e( 'Set Image Per Slide for different Devices', 'wen-logo-slider' ); ?></span>
+						<span class="small"><?php esc_html_e( 'Set Image Per Slide for different Devices', 'wen-logo-slider' ); ?></span>
 					</label>
 				</p>
 
-				<div id="mobile-resolution-options" style="<?php echo ( isset($settings_args['wls_enable_mobile_resolution']) && $settings_args['wls_enable_mobile_resolution'] == '1')?'display:block':'display:none'; ?>">			
+				<div id="mobile-resolution-options" style="<?php echo ( isset($settings_args['wls_enable_mobile_resolution']) && $settings_args['wls_enable_mobile_resolution'] == '1')?'display:block':'display:none'; ?>">
 					<div>
-						<label class="title"><strong><?php _e( 'Image Per Slide in', 'wen-logo-slider' ); ?></strong></label>
+						<label class="title"><strong><?php esc_html_e( 'Image Per Slide in', 'wen-logo-slider' ); ?></strong></label>
 						<div class="ws-breakpoints" >
 						<?php $breakpoints = isset( $settings_args['res'] ) ? $settings_args['res'] : array(); ?>
 
@@ -859,12 +911,31 @@ class WEN_Logo_Slider_Admin {
 							<a href="javascript:void(0)" class="wls-breakpoint-remove" >
 							<i class="dashicons dashicons-dismiss"></i>
 							</a>
-							<input type="number" min="1" max="9" class="wls-resolutions" id="res<?php esc_html_e( $breakpoint, 'wen-logo-slider' ); ?>" name="wen_logo_slider_settings[res][<?php esc_html_e( $breakpoint, 'wen-logo-slider' ); ?>]" value="<?php esc_html_e( $slides, 'wen-logo-slider' ); ?>"  <?php echo ( isset($settings_args['wls_enable_mobile_resolution']) && $settings_args['wls_enable_mobile_resolution'] == '1')?'required':''; ?> />
+							<input
+							    type="number"
+							    min="1"
+							    max="9"
+							    class="wls-resolutions"
+							    id="res<?php echo esc_attr( $breakpoint ); ?>"
+							    name="wen_logo_slider_settings[res][<?php echo esc_attr( $breakpoint ); ?>]"
+							    value="<?php echo esc_attr( $slides ); ?>"
+							    <?php echo ( isset( $settings_args['wls_enable_mobile_resolution'] ) && $settings_args['wls_enable_mobile_resolution'] == '1' ) ? 'required' : ''; ?>
+							/>
 							<br>
-							<span><?php esc_html_e( 'Breakpoint < ' . str_replace( '_', 'wen-logo-slider', $breakpoint ) ); ?></span>
+							<?php
+							/* translators: %1$s: the breakpoint value */
+							printf(
+							    '<span>%s</span>',
+							    esc_html( sprintf(
+							        /* translators: %1$s: breakpoint value */
+							        __( 'Breakpoint < %1$s', 'wen-logo-slider' ),
+							        str_replace( '_', ' ', $breakpoint )
+							    ) )
+							);
+							?>
 							</div>
 						<?php endforeach; ?>
-							
+
 						</div>
 						<a href="javascript:void(0)" class="ws-add-new-breakpoint-popup"><?php esc_html_e( 'New (+)', 'wen-logo-slider' ); ?></a>
 						<div class="ws-add-breakpoint-template" style="display:none">
@@ -872,28 +943,27 @@ class WEN_Logo_Slider_Admin {
 							<input style="width:170px" type="number" class="ws-break-point-temp" value="" placeholder="Resolution eg. 1024" >
 							<input style="width:170px" type="number" class="ws-number-of-slides" value="" placeholder="No. of Slides eg. 5" >
 							<a href="javascript:void(0)" class="ws-add-new-breakpoint" ><?php esc_html_e( 'Add ', 'wen-logo-slider' ); ?></a>
-						</div>						
+						</div>
 					</div>
-					<label class="title"></label><span class="small"><?php _e( '(Eg. 2 slides in 768 and 1 slides in 360 resolution)', 'wen-logo-slider' ); ?></span>
+					<label class="title"></label><span class="small"><?php esc_html_e( '(Eg. 2 slides in 768 and 1 slides in 360 resolution)', 'wen-logo-slider' ); ?></span>
 				</div>
 
-				
+
 				<p>
-					<label class="title"><strong><?php _e( 'Image Size', 'wen-logo-slider' ); ?></strong></label>			
+					<label class="title"><strong><?php esc_html_e( 'Image Size', 'wen-logo-slider' ); ?></strong></label>
 					<select name="wen_logo_slider_settings[image_size]" id="wls_image_size" class="wls-choosen" >
 						<?php $image_sizes = $this->get_image_sizes(); ?>
 						<?php foreach ($image_sizes as $key => $size): ?>
-							<option value="<?php echo esc_attr( $key ); ?>" <?php if(isset( $settings_args['image_size']))selected( $settings_args['image_size'], $key ); ?>><?php echo esc_attr( $key ); ?><?php echo ' ('.$size['width'] . 'x'.$size['height'] . ')'; ?></option>
+							<option value="<?php echo esc_attr( $key ); ?>" <?php if ( isset( $settings_args['image_size'] ) ) selected( $settings_args['image_size'], $key ); ?>>
+    							<?php echo esc_html( $key . ' (' . intval( $size['width'] ) . 'x' . intval( $size['height'] ) . ')' ); ?>
+							</option>
 						<?php endforeach ?>
 					</select></p>
 
-				
-
-				
 				<p>
-					<label class="title"><strong><?php _e( 'Loop Slide', 'wen-logo-slider' ); ?></strong></label>
-					
-					<?php $scroll_options = $this->get_scroll_options(); ?>					
+					<label class="title"><strong><?php esc_html_e( 'Loop Slide', 'wen-logo-slider' ); ?></strong></label>
+
+					<?php $scroll_options = $this->get_scroll_options(); ?>
 					<select name="wen_logo_slider_settings[scroll]" id="wls_scroll" class="wls-choosen">
 						<?php foreach ($scroll_options as $key => $val): ?>
 							<option value="<?php echo esc_attr( $val ); ?>" <?php if(isset( $settings_args['scroll']))selected( $settings_args['scroll'], $val ); ?>><?php echo esc_attr( $key ); ?></option>
@@ -902,44 +972,44 @@ class WEN_Logo_Slider_Admin {
 				</p>
 
 				<p>
-					<label class="title"><strong><?php _e( 'Mouse Dragging', 'wen-logo-slider' ); ?></strong></label>
+					<label class="title"><strong><?php esc_html_e( 'Mouse Dragging', 'wen-logo-slider' ); ?></strong></label>
 					<label>
 						<input type="hidden" id="wen_logo_slider_settings[mouse_dragging]" name="wen_logo_slider_settings[mouse_dragging]" value="0" />
 						<input type="checkbox" id="wen_logo_slider_settings[mouse_dragging]" name="wen_logo_slider_settings[mouse_dragging]" value="1" <?php if(isset( $settings_args['mouse_dragging']))checked( $settings_args['mouse_dragging'], 1, true); ?> />
-						<span class="small"><?php _e( 'Enable', 'wen-logo-slider' ); ?></span>
+						<span class="small"><?php esc_html_e( 'Enable', 'wen-logo-slider' ); ?></span>
 					</label>
 				</p>
 				
 
 				<p>
-					<label  class="title"><strong><?php _e( 'Slide Direction Right to Left', 'wen-logo-slider' ); ?></strong></label>
+					<label  class="title"><strong><?php esc_html_e( 'Slide Direction Right to Left', 'wen-logo-slider' ); ?></strong></label>
 					<label>
 						<input type="hidden" id="wen_logo_slider_settings[direction]" name="wen_logo_slider_settings[direction]" value="0" />
 						<input type="checkbox" id="wen_logo_slider_settings[direction]" name="wen_logo_slider_settings[direction]" value="1" <?php if(isset( $settings_args['direction']))checked( $settings_args['direction'], 1, true); ?> />
-						<span class="small"><?php _e( 'Enable', 'wen-logo-slider' ); ?></span>
+						<span class="small"><?php esc_html_e( 'Enable', 'wen-logo-slider' ); ?></span>
 					</label>
 				</p>
 				<p>
-					<label  class="title"><strong><?php _e( 'Lazy Load', 'wen-logo-slider' ); ?></strong></label>
+					<label  class="title"><strong><?php esc_html_e( 'Lazy Load', 'wen-logo-slider' ); ?></strong></label>
 					<label>
 						<input type="hidden" id="wen_logo_slider_settings[lazy_load]" name="wen_logo_slider_settings[lazy_load]" value="0" />
 						<input type="checkbox" id="wen_logo_slider_settings[lazy_load]" name="wen_logo_slider_settings[lazy_load]" value="1" <?php if(isset( $settings_args['lazy_load']))checked( $settings_args['lazy_load'], 1, true); ?> />
-						<span class="small"><?php _e( 'Enable', 'wen-logo-slider' ); ?></span>
+						<span class="small"><?php esc_html_e( 'Enable', 'wen-logo-slider' ); ?></span>
 					</label>
 				</p>
 
 				<p>
-					<label class="title"><strong><?php _e( 'Pagination', 'wen-logo-slider' ); ?></strong></label>
+					<label class="title"><strong><?php esc_html_e( 'Pagination', 'wen-logo-slider' ); ?></strong></label>
 					<label>
 						<input type="hidden" id="wen_logo_slider_settings[pagination]" name="wen_logo_slider_settings[pagination]" value="0" />
 						<input type="checkbox" id="wls_pagination" name="wen_logo_slider_settings[pagination]" value="1" <?php if(isset( $settings_args['pagination']))checked( $settings_args['pagination'], 1, true); ?> />
-						<span class="small"><?php _e( 'Enable', 'wen-logo-slider' ); ?></span>
+						<span class="small"><?php esc_html_e( 'Enable', 'wen-logo-slider' ); ?></span>
 					</label>
 				</p>
 
 				<div id="pagination_types" style="<?php echo (isset($settings_args['pagination']) && $settings_args['pagination'] == '1')?'display:block':'display:none'; ?>">
 					<p>
-						<label class="title"><strong><?php _e( 'Pagination Type', 'wen-logo-slider' ); ?></strong></label>
+						<label class="title"><strong><?php esc_html_e( 'Pagination Type', 'wen-logo-slider' ); ?></strong></label>
 						
 						<?php
 						$pagination_types = $this->get_pagination_options();
@@ -953,19 +1023,19 @@ class WEN_Logo_Slider_Admin {
 				</div>
 
 				<p>
-					<label  class="title"><strong><?php _e( 'Navigation Arrow', 'wen-logo-slider' ); ?></strong></label>
+					<label  class="title"><strong><?php esc_html_e( 'Navigation Arrow', 'wen-logo-slider' ); ?></strong></label>
 					
 					<label>
 						<input type="hidden" id="wen_logo_slider_settings[enable_navigation_arrow]" name="wen_logo_slider_settings[enable_navigation_arrow]" value="0" />
 						<input type="checkbox" id="wls_enable_navigation_arrow" name="wen_logo_slider_settings[enable_navigation_arrow]" value="1"  <?php if(isset( $settings_args['enable_navigation_arrow']))checked( $settings_args['enable_navigation_arrow'], 1, true); ?> />		
-						<?php _e( 'Enable', 'wen-logo-slider' ); ?>
-						<span class="description">(<?php _e( 'Previous / Next', 'wen-logo-slider' ); ?>)</span>
+						<?php esc_html_e( 'Enable', 'wen-logo-slider' ); ?>
+						<span class="description">(<?php esc_html_e( 'Previous / Next', 'wen-logo-slider' ); ?>)</span>
 					</label>
 				</p>
 				
 				<div id="navigation_types" style="<?php echo ( $settings_args['enable_navigation_arrow'] == 1)?'display:block':'display:none'; ?>">
 					<p>
-			            <label class="title"><strong><?php _e( 'Navigation Type', 'wen-logo-slider' ); ?></strong></label>
+			            <label class="title"><strong><?php esc_html_e( 'Navigation Type', 'wen-logo-slider' ); ?></strong></label>
 			            <?php 
 			        	$nav_type = "";
 			        	if(isset($settings_args['navigation_type']))
@@ -973,35 +1043,40 @@ class WEN_Logo_Slider_Admin {
 
 			            ?>
 			            <select name="wen_logo_slider_settings[navigation_type]" id="wls_navigation_type" class="wls-choosen-nav-type" >
-			                <option value="arrows" data-img-src="<?php echo WEN_LOGO_SLIDER_URL;?>/admin/images/nav/arrows.png" <?php selected( $nav_type, 'arrows', true); ?>>Default</option>
-			                <option value="type-i" data-img-src="<?php echo WEN_LOGO_SLIDER_URL;?>/admin/images/nav/type-i.png" <?php selected( $nav_type, 'type-i', true); ?>>Type 1</option>
-			                <option value="type-ii"  data-img-src="<?php echo WEN_LOGO_SLIDER_URL;?>/admin/images/nav/type-ii.png" <?php selected( $nav_type, 'type-ii', true); ?>>Type 2</option>
-			                <option value="type-iii"  data-img-src="<?php echo WEN_LOGO_SLIDER_URL;?>/admin/images/nav/type-iii.png" <?php selected( $nav_type, 'type-iii', true); ?>>Type 3</option>
-			                <option value="type-iv"  data-img-src="<?php echo WEN_LOGO_SLIDER_URL;?>/admin/images/nav/type-iv.png" <?php selected( $nav_type, 'type-iv', true); ?>>Type 4</option>
-			                <option value="type-v"  data-img-src="<?php echo WEN_LOGO_SLIDER_URL;?>/admin/images/nav/type-v.png" <?php selected( $nav_type, 'type-v', true); ?>>Type 5</option>
-			                <option value="type-vi"  data-img-src="<?php echo WEN_LOGO_SLIDER_URL;?>/admin/images/nav/type-vi.png" <?php selected( $nav_type, 'type-vi', true); ?>>Type 6</option>
-			                <option value="type-vii"  data-img-src="<?php echo WEN_LOGO_SLIDER_URL;?>/admin/images/nav/type-vii.png" <?php selected( $nav_type, 'type-vii', true); ?>>Type 7</option>
+			                <option value="arrows" data-img-src="<?php echo esc_url( WEN_LOGO_SLIDER_URL . '/admin/images/nav/arrows.png' ); ?>" <?php selected( $nav_type, 'arrows', true); ?>>Default</option>
+			                <option value="type-i" data-img-src="<?php echo esc_url( WEN_LOGO_SLIDER_URL . '/admin/images/nav/type-i.png' ); ?>" <?php selected( $nav_type, 'type-i', true); ?>>Type 1</option>
+			                <option value="type-ii"  data-img-src="<?php echo esc_url( WEN_LOGO_SLIDER_URL . '/admin/images/nav/type-ii.png' ); ?>" <?php selected( $nav_type, 'type-ii', true); ?>>Type 2</option>
+			                <option value="type-iii"  data-img-src="<?php echo esc_url( WEN_LOGO_SLIDER_URL . '/admin/images/nav/type-iii.png' ); ?>" <?php selected( $nav_type, 'type-iii', true); ?>>Type 3</option>
+			                <option value="type-iv"  data-img-src="<?php echo esc_url( WEN_LOGO_SLIDER_URL . '/admin/images/nav/type-iv.png' ); ?>" <?php selected( $nav_type, 'type-iv', true); ?>>Type 4</option>
+			                <option value="type-v"  data-img-src="<?php echo esc_url( WEN_LOGO_SLIDER_URL . '/admin/images/nav/type-v.png' ); ?>" <?php selected( $nav_type, 'type-v', true); ?>>Type 5</option>
+			                <option value="type-vi"  data-img-src="<?php echo esc_url( WEN_LOGO_SLIDER_URL . '/admin/images/nav/type-vi.png' ); ?>" <?php selected( $nav_type, 'type-vi', true); ?>>Type 6</option>
+			                <option value="type-vii"  data-img-src="<?php echo esc_url( WEN_LOGO_SLIDER_URL . '/admin/images/nav/type-vii.png' ); ?>" <?php selected( $nav_type, 'type-vii', true); ?>>Type 7</option>
 			            </select>
 			        </p>
 
 				</div>
 				<div id="navigation_arrow_mob" style="<?php echo ( $settings_args['enable_navigation_arrow'] == 1)?'display:block':'display:none'; ?>">
 				<p>
-					<label  class="title"><strong><?php _e( 'Hide Arrow in Mobile', 'wen-logo-slider' ); ?></strong></label>				
+					<label  class="title"><strong><?php esc_html_e( 'Hide Arrow in Mobile', 'wen-logo-slider' ); ?></strong></label>
 					<label>
 						<input type="hidden" id="wen_logo_slider_settings[hide_nav_arrow_mob]" name="wen_logo_slider_settings[hide_nav_arrow_mob]" value="0" />
 						<input type="checkbox" id="hide_nav_arrow_mob" name="wen_logo_slider_settings[hide_nav_arrow_mob]" value="1" <?php if(isset( $settings_args['hide_nav_arrow_mob']))checked( $settings_args['hide_nav_arrow_mob'], 1, true); ?> />					
-						<span class="small"><?php _e( 'Enable', 'wen-logo-slider' ); ?></span>
+						<span class="small"><?php esc_html_e( 'Enable', 'wen-logo-slider' ); ?></span>
 					</label>
 				</p>
 				</div>
 
 			</div>
 		</div>
-		
+
 		<?php do_action( 'wen_logo_slider_after_setting_fields', $settings_args ); ?>
-		
-	<?php echo ob_get_clean(); 
+
+		<?php
+		$output = ob_get_clean();
+
+		// For admin forms, just echo as-is
+		echo $output;
+
 	}
 
 	function settings_default_args(){
@@ -1009,7 +1084,7 @@ class WEN_Logo_Slider_Admin {
 		'show_title'				=> 1,
 		'auto_play'					=> 1,
 		'slider_delay'				=> 4,
-		'transition_time'			=> 1,			
+		'transition_time'			=> 1,
 		'images_per_slide'			=> 5,
 		'wls_enable_mobile_resolution' => 0,
 		'res'						=> array('_786'=>'','_360'=>''),

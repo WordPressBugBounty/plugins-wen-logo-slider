@@ -72,7 +72,7 @@ class WEN_Logo_Slider_Public {
 	public function enqueue_scripts() {
 
 		wp_enqueue_script( $this->plugin_name . '-slick-carousel', WEN_LOGO_SLIDER_URL . '/vendors/slick-carousel/slick.min.js', array( 'jquery' ), '1.3.2', false );
-		
+
 	}
 
 	public function custom_post_types(){
