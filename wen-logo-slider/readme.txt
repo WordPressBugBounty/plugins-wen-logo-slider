@@ -3,9 +3,9 @@ Contributors: WEN Solutions
 Donate link: http://wensolutions.com
 Tags: carousel, logo, slider, image carousel, logo carousel, logo showcase, logo slide, logo slide show, logo slider, logo slideshow, responsive,
 Requires at least: 4.7
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 5.6.2
-Stable tag: 3.5
+Stable tag: 3.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,43 +73,35 @@ Nice, make a post on the [Support Forum](http://wordpress.org/support/plugin/wen
 
 == Changelog ==
 
-= 3.5 =
-Release Date: 28th December, 2025
+= 3.6 - Apr 05 2026 =
+* Fix: missing_direct_file_access_protection
+* Fix: WordPress.Security.EscapeOutput.OutputNotEscaped
+* Compatibility tested upto WordPress 7.0
 
-* Fixed: Cross Site Scripting (XSS) reported by Nabil Irawan
-* Fixed Internationalize issue
-* Fixed badly_named_files for image
-* Tested up to WordPress v6.9
+= 3.5 - Dec 28 2025 =
+* Fix: Cross Site Scripting (XSS) reported by Nabil Irawan
+* Fix: Internationalize issue
+* Fix: badly_named_files for image
+* Compatibility tested upto WordPress 6.9
 
-= 3.4.0 =
-Release Date: 13th September, 2024
+= 3.4.0 - Sep 13 2024 =
+* Fix: Slider glitch issue
+* Compatibility tested upto WordPress 6.6
 
-* Fixed slider glitch issue
-* Tested up to WordPress v6.6
+= 3.3.0 - Apr 15 2024 =
+* Fix: Plugin general errors
+* Fix: Plugin security errors
+* Compatibility tested upto WordPress 6.5
 
-= 3.3.0 =
-Release Date: 15th April, 2024
+= 3.2.0 - Jan 16 2024 =
+* Compatibility tested upto WordPress 6.2
 
-* Fixed plugin general errors
-* Fixed Plugin security errors
-* Compatibility tested with WordPress 6.5
+= 3.1 - Jul 07 2023 =
+* Fix: Slider arrow CSS issue
+* Fix: Slider dot CSS issue
 
-= 3.2.0 =
-Release Date: 16th January, 2024
-
-* Compatibility tested with WordPress 6.2.
-
-= 3.1 =
-Release Date: 7th July, 2023
-
-* Compatibility tested with WordPress 6.2.
-* Fixed slider arrow CSS issue
-* Fixed slider dot CSS issue
-
-= 3.0 =
-Release Date: 23rd June, 2022
-
-* Compatibility tested with WordPress 6.0.
+= 3.0 - Jun 23 2022 =
+* Compatibility tested upto WordPress 6.0
 
 Enhancement:
 
@@ -134,24 +126,22 @@ Enhancement:
 * Navigation Type option for selecting the navigation type arrow.
 * Hide Arrow in Mobile option for hiding arrow of slider in mobile device.
 
-= 2.0.8 =
-* Release Date: December 3, 2019
-* Compatibility tested upto 5.3
+= 2.0.8 - Dec 03 2019 =
+* Compatibility tested upto WordPress 5.3
 
 = 2.0.7 =
-* Compatibility testing.
+* Compatibility testing
 
 = 2.0.6 =
-* Compatibility testing.
+* Compatibility testing
 
 = 2.0.5 =
-* Admin Layout Updated.
-* Slick Version upgraded to 1.8.0.
-* Fixes : Publish slider goes to draft.
-* Fixes : Minor Design issue.
-* Fixes : Fixed issue of Next/Prev button not displaying 
+* Admin Layout Updated
+* Slick Version upgraded to 1.8.0
+* Fixes : Publish slider goes to draft
+* Fixes : Minor Design issue
+* Fixes : Fixed issue of Next/Prev button not displaying
 * Compatibility tested upto WordPress 5.2.2
-
 
 = 2.0.4 =
 * Added action hooks "wen_logo_slider_before_slides" & "wen_logo_slider_after_slides".
@@ -162,16 +152,16 @@ Enhancement:
 * Settings Split into General and Advance Settings
 
 = 2.0.2 =
-* Fix: Fixed mulitple slider issue on one page.
+* Fix: Fixed mulitple slider issue on one page
 
 = 2.0.1 =
-* Fix: Minor UI fixings.
+* Fix: Minor UI fixings
 
 = 2.0.0 =
-* Feature: Owl carousel replaced by Slick.
-* Feature: Numeric validation on input fields like Slider Delay, Transition Time and Images per Slide.
-* Feature: Title for slides is not compulsory as on previous verison. Title can be kept empty.
-* Feature: Some minor CSS fixes.
+* Feature: Owl carousel replaced by Slick
+* Feature: Numeric validation on input fields like Slider Delay, Transition Time and Images per Slide
+* Feature: Title for slides is not compulsory as on previous verison. Title can be kept empty
+* Feature: Some minor CSS fixes
 
 = 1.0.1 =
 * Feature: Enable random order for images display

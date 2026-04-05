@@ -16,12 +16,12 @@
  * Plugin Name:       WEN Logo Slider
  * Plugin URI:        https://wordpress.org/plugins/wen-logo-slider/
  * Description:       Responsive logo slider for WordPress sites.
- * Version:           3.5
+ * Version:           3.6
  * Author:            WEN Solutions
  * Author URI:        http://wensolutions.com/
  * Requires at least: 4.7
  * Requires PHP:      5.6.2
- * Tested up to:      6.9
+ * Tested up to:      7.0
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wen-logo-slider
@@ -36,7 +36,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 // Define
 define( 'WEN_LOGO_SLIDER_NAME', 'WEN Logo Slider' );
-define( 'WEN_LOGO_SLIDER_VERSION', '3.5' );
+define( 'WEN_LOGO_SLIDER_VERSION', '3.6' );
 define( 'WEN_LOGO_SLIDER_SLUG', 'wen-logo-slider' );
 define( 'WEN_LOGO_SLIDER_FILE_BASE', __FILE__ );
 define( 'WEN_LOGO_SLIDER_BASENAME', basename( dirname( __FILE__ ) ) );
